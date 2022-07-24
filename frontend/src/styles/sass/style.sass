@@ -1,0 +1,42 @@
+//partials
+@use 'variables'
+
+*
+    font-family: "Helvetica", Sans-serif
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body
+    background-color: variables.$tertiary
+    color: variables.$primary-color
+
+    h1, h2
+        color: variables.$secondary-color
+        //text-decoration: none
+    nav
+        height: 19vh
+        background-color: variables.$primary-color
+        position: sticky
+        top:0
+    table
+        width: 100%
+        border: variables.$primary-color
+        border-spacing: 1px
+        overflow: hidden
+    .Container
+        margin:2vh auto
+        width: 100%
+        max-width: variables.$container-width
+
+    .lineTitle
+        background-color: variables.$primary-color
+        color: variables.$tertiary
+        font-weight: 100
+        font-size: 14px
+    .lineTotal
+        border-spacing: 0
+    .Item
+        text-align: right
+        padding-right: 8px
+
