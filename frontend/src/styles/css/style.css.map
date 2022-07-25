@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["../sass/style.sass","../sass/_variables.sass"],"names":[],"mappings":"AAGA;EACI;EACA;EACA;EACA;;;AAEJ;EACI,kBCRc;EDSd,OCXc;;ADad;EACI,OCbU;;ADed;EACI;EACA,kBClBU;EDmBV;EACA;;AACJ;EACI;EACA,QCvBU;EDwBV;EACA;;AACJ;EACI;EACA;EACA,WCzBU;;AD2Bd;EACI,kBChCU;EDiCV,OC/BU;EDgCV;EACA;;AACJ;EACI;;AACJ;EACI;EACA","file":"style.css"}

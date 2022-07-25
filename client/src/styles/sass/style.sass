@@ -1,0 +1,112 @@
+//partials
+@use 'variables'
+
+*
+    font-family: "Helvetica", Sans-serif
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body
+    background-color: variables.$tertiary
+    color: variables.$primary-color
+
+    h1, h2
+        color: variables.$secondary-color
+        //text-decoration: none
+    nav
+        height: 19vh
+        background-color: variables.$primary-color
+        position: sticky
+        top: 0
+    table
+        width: 100%
+        border-radius: 7px
+        border-spacing: 1px
+        overflow: hidden
+    tbody
+        .pedido
+            cursor: pointer
+
+    td,th
+        padding: 1px 3px
+    tr:nth-child(even)
+        background: variables.$bg-cell
+
+    .Container
+        margin: 2vh auto
+        width: 100%
+        max-width: variables.$container-width
+
+    .lineTitle
+        background-color: variables.$primary-color
+        color: variables.$tertiary
+        font-weight: 100
+        font-size: 14px
+    .lineTotal
+        color: variables.$secondary-color
+        text-align: right
+        background-color: variables.$primary-color
+        padding: 1px
+    .Item
+        text-align: right
+        padding-right: 8px
+    .Modal
+        button
+            width: 20px
+            height: 19px
+            text-align: center
+            background: rgba(24, 22, 83, 0.9)
+            color: white
+            font-size: 16px
+            border: none
+            border-radius: 3px
+            position: fixed
+            top: 0
+            right: 0
+            margin: 6px
+        .area-profile, .area-adress, .area-products, .area-details
+            height: 100%
+            width: 100%
+        .area-profile
+            grid-area: area-profile
+            .table-profile
+                border-spacing: 0 10px
+                tr:nth-child(even)
+                    border-radius: 20px
+                    background: #ff5100be
+        .area-adress
+            grid-area: area-adress
+            .table-adress
+                margin:0 8px
+                border-spacing: 0 10px
+                tr:nth-child(even)
+                    border-radius: 20px
+                    background: #ff5100be
+        .area-products
+            grid-area: area-products
+            .table-products
+                border-spacing: 0 10px
+                tr:nth-child(even)
+                    border-radius: 20px
+                    background: #ff5100be                
+        .area-details
+            grid-area: area-details
+        text-align: left
+        display: grid
+        grid-template-areas: "area-profile area-profile area-adress area-adress" "area-products area-products area-products area-products" "area-products area-products area-products area-products" "area-products area-products area-products area-products"  "area-details area-details area-details area-details" 
+        margin: auto
+        width: 80%
+        height: 80%
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        position: fixed
+        max-width: variables.$container-width
+        background-color: rgba(24, 22, 83, 0.9)
+        backdrop-filter: blur(10px)
+        color: white
+        border-radius: 10px
+        padding: 30px 20px
+
