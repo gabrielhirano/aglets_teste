@@ -7,22 +7,20 @@ interface IPedido{
     creationDate: string;
     value: number;
 }
+
 interface Props{
     item: IPedido;
-    handleOpenModal: () => void;
-    handleCloseModal: () => void;
 }
 
-const Item: React.FC<Props> = ({ item, handleOpenModal}) => {
+const Item: React.FC<Props> = ({ item }) => {
     return (
         <>
-            <tr>
-                <td className="Item pedido" onClick={ (row)=> console.log(row.target.value) }>{item.orderId}</td>
-                <td className="Item">{item.statusDescription}</td>
-                <td className="Item">{item.creationDate}</td>
-                <td className="Item">{item.value}</td>
-            </tr>
+            <td className="Item pedido">{item.orderId}</td>
+            <td className="Item">{item.statusDescription}</td>
+            <td className="Item">{item.creationDate}</td>
+            <td className="Item">{item.value}</td>
         </>
+
     )
 
 }

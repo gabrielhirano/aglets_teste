@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ReactModal  from 'react-modal';
 import api from '../services/api';
 import Item from "./Item";
@@ -43,7 +43,11 @@ function List() {
             </tr>
         </thead>
         <tbody>
-            { itens.map(item => <Item key={item.orderId} item={item} handleCloseModal={handleCloseModal} handleOpenModal={ handleOpenModal }/>) }
+            { itens.map(item => 
+            <tr onClick={ handleOpenModal }>
+                <Item key={item.orderId} item={item}/>
+            </tr>
+            ) }
         </tbody>
         <tfoot>
             <tr className="lineTotal">

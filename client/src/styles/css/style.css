@@ -21,17 +21,17 @@ body nav {
 body table {
   width: 100%;
   border-radius: 7px;
-  border-spacing: 1px;
+  border-spacing: 0 1px;
   overflow: hidden;
 }
-body tbody .pedido {
+body tbody tr {
   cursor: pointer;
+}
+body tbody tr:nth-child(even) {
+  background: rgba(16, 14, 68, 0.3098039216);
 }
 body td, body th {
   padding: 1px 3px;
-}
-body tr:nth-child(even) {
-  background: rgba(16, 14, 68, 0.3098039216);
 }
 body .Container {
   margin: 2vh auto;
