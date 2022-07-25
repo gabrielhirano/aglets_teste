@@ -74,10 +74,6 @@ interface Props{
 }
 
 const Modal: React.FC<Props> = ({modalIsOpen, handleCloseModal, dataObject}) =>{
-    if(dataObject){
-    console.log('Data obj')
-    console.log(dataObject)
-    }
 
     return (
         <ReactModal
