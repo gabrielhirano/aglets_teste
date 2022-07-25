@@ -1,7 +1,7 @@
 # Pesares
 <p>
   Ola não tive exito ao completar o teste, ficou faltando adicionar os dados de forma dinamica no modal, estava pesquisando sobre, e vi preciso 
-  estudar muito sobre o React ainda.
+  estudar muito sobre o React ainda, agradeço a oportunidade
 </p>
 
 # Obersações
