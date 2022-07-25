@@ -1,11 +1,70 @@
 
 import React, { Fragment, useEffect, useState } from "react";
-import ReactModal  from 'react-modal';
+// import ReactModal  from 'react-modal';
 import api from '../services/api';
 import Item from "./Item";
 import ModalOwn from "./ModalOwn"
 
-// ReactModal.setAppElement('#app')
+//ReactModal.setAppElement('#app')
+interface ICliente{
+    id: string;
+    firstName: string;
+    lastName: string;
+    documentType: string;
+    document: string;
+    phone: string;
+    email: string;
+}
+interface IEndereco{
+    street: string;
+    number: string;
+    neighborhood: string;
+    city: string;
+    state: string;
+    country: string
+    addressType: string;
+    receiverName: string;
+    postalCode: string;
+}
+interface IEnvio{
+    id: string;
+    selectedAddresses: IEndereco;
+}
+interface IItems{
+    id: string;
+    productId: string;
+    quantity: number;
+    seller: string;
+    name: string;
+    price: number;
+    imageUrl: string;
+    detailUrl: string;
+}
+interface ICategoria{
+    id: string;
+    name: string;
+}
+interface IDimensions{
+    cubicweight: number;
+    height: number;
+    length: number;
+    weight: number;
+    width: number;
+}
+interface IInfo{
+    brandName: string;
+    brandId: string;
+    categoriesIds: string;
+    categories: Array<ICategoria>;
+    dimension: IDimensions;
+}
+interface IInformacao{
+    clientProfileData: ICliente;
+    shippingData: IEnvio;
+    items: IItems;
+    additionalInfo: IInfo
+
+}
 
 interface IPedido{
     orderId: string;
@@ -15,9 +74,11 @@ interface IPedido{
 }
 function List() {
     const [itens, setItens] = useState<IPedido[]>([]);
+    const [itenSelec, setItenSelec] = useState<unknown>();
 
     useEffect(() => {
         api.get('/data').then(response => {
+            console.log(response)
             setItens(response.data)
         })
     }, []);
@@ -44,7 +105,12 @@ function List() {
         </thead>
         <tbody>
             { itens.map(item => 
-            <tr onClick={ handleOpenModal }>
+            <tr onClick={() =>{
+                setItenSelec(item)
+                console.log('iten')
+                console.log(itenSelec)
+            return handleOpenModal()
+            }}>
                 <Item key={item.orderId} item={item}/>
             </tr>
             ) }
@@ -62,6 +128,7 @@ function List() {
     <ModalOwn
     modalIsOpen={modalIsOpen}
     handleCloseModal={handleCloseModal}
+    dataObject={itenSelec}
     />
 
 
